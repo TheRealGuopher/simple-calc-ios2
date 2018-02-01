@@ -15,6 +15,7 @@
 		DA2E714C201B028B00D2BF1A /* SimpleCalcIOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2E714B201B028B00D2BF1A /* SimpleCalcIOSTests.swift */; };
 		DA2E7157201B028B00D2BF1A /* SimpleCalcIOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2E7156201B028B00D2BF1A /* SimpleCalcIOSUITests.swift */; };
 		DA2E7165201B079100D2BF1A /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2E7164201B079100D2BF1A /* RoundButton.swift */; };
+		DAE7A9382022C91600F4050B /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE7A9372022C91600F4050B /* HistoryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		DA2E7156201B028B00D2BF1A /* SimpleCalcIOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleCalcIOSUITests.swift; sourceTree = "<group>"; };
 		DA2E7158201B028B00D2BF1A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA2E7164201B079100D2BF1A /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
+		DAE7A9372022C91600F4050B /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				DA2E713F201B028B00D2BF1A /* LaunchScreen.storyboard */,
 				DA2E7142201B028B00D2BF1A /* Info.plist */,
 				DA2E7164201B079100D2BF1A /* RoundButton.swift */,
+				DAE7A9372022C91600F4050B /* HistoryViewController.swift */,
 			);
 			path = SimpleCalcIOS;
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 				DA2E7165201B079100D2BF1A /* RoundButton.swift in Sources */,
 				DA2E7139201B028B00D2BF1A /* ViewController.swift in Sources */,
 				DA2E7137201B028B00D2BF1A /* AppDelegate.swift in Sources */,
+				DAE7A9382022C91600F4050B /* HistoryViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -24,6 +24,7 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var outputLbl: UILabel!
     
+    var wordBank:[String] = ["Hello", "JJ"]
     var runningNumber = ""
     var leftValue = ""
     var rightValue = ""
