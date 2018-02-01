@@ -11,14 +11,17 @@ import UIKit
 class HistoryViewController: UIViewController {
 
     @IBOutlet weak var scrollView: UIScrollView!
-    var wordBank:[String] = ["Hello", "JJ"]
+    var wordBank:[String] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        for index in 0...wordBank.count - 1 {
-            let label = UILabel(frame: CGRect(x: 50, y: index * 25 + 50, width: 300, height: 40))
-            label.text = wordBank[index]
-            view.addSubview(label)
-            scrollView.addSubview(label)
+        if wordBank.count > 0 {
+            for index in 0...wordBank.count - 1 {
+                let label = UILabel(frame: CGRect(x: 50, y: index * 25 + 50, width: 300, height: 40))
+                label.text = wordBank[index]
+                view.addSubview(label)
+                scrollView.addSubview(label)
+            }
         }
         // Do any additional setup after loading the view.
     }

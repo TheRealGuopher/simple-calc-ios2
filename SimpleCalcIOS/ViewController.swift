@@ -24,7 +24,7 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var outputLbl: UILabel!
     
-    var wordBank:[String] = ["Hello", "JJ"]
+    var wordBank:[String] = []
     var runningNumber = ""
     var leftValue = ""
     var rightValue = ""
@@ -36,6 +36,13 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         outputLbl.text = "0"
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.destination is HistoryViewController {
+            let talkView = segue.destination as? HistoryViewController
+            talkView?.wordBank = wordBank
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -217,6 +224,7 @@ class ViewController: UIViewController {
                 
                 if (success && canConvertToInt(num: result) && result.count < 12) {
                     result = "\(Int(Double(result)!))"
+                    wordBank.append(result)
                 }
                 if (success) {
                     leftValue = result
