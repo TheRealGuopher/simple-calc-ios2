@@ -202,18 +202,24 @@ class ViewController: UIViewController {
                 rightValue = runningNumber
                 runningNumber = ""
                 var success = true
+                var operation = ""
                 if currentOperation == .Add {
                     result = "\(Double(leftValue)! + Double(rightValue)!)"
+                    operation = "+"
                 } else if currentOperation == .Subtract {
                     result = "\(Double(leftValue)! - Double(rightValue)!)"
+                    operation = "-"
                 } else if currentOperation == .Multiply {
                     result = "\(Double(leftValue)! * Double(rightValue)!)"
+                    operation = "*"
                 } else if currentOperation == .Divide {
                     result = "\(Double(leftValue)! / Double(rightValue)!)"
+                    operation = "/"
                 } else if currentOperation == .Mod {
                     if (canConvertToInt(num: leftValue) && canConvertToInt(num: rightValue)) {
                         let times = Int(leftValue)! / Int(rightValue)!
                         result = "\(Int(leftValue)! - (times * Int(rightValue)!))"
+                        operation = "%"
                     } else {
                         success = false
                         result = "Can't mod"
@@ -224,7 +230,7 @@ class ViewController: UIViewController {
                 
                 if (success && canConvertToInt(num: result) && result.count < 12) {
                     result = "\(Int(Double(result)!))"
-                    wordBank.append(result)
+                    wordBank.append("\(leftValue) \(operation) \(rightValue) = \(result)")
                 }
                 if (success) {
                     leftValue = result
