@@ -244,8 +244,9 @@ class ViewController: UIViewController {
                 
                 if (success && canConvertToInt(num: result) && result.count < 12) {
                     result = "\(Int(Double(result)!))"
-                    wordBank.append("\(leftValue) \(operation) \(rightValue) = \(result)")
+//                    wordBank.append("\(leftValue) \(operation) \(rightValue) = \(result)")
                 }
+                wordBank.append("\(leftValue) \(operation) \(rightValue) = \(result)")
                 if (success) {
                     leftValue = result
                 }
