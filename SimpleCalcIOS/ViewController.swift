@@ -32,6 +32,7 @@ class ViewController: UIViewController {
     var currentOperation:Operation = .NULL
     var count = 0
     var sum = 0.0
+    var countString = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -121,6 +122,9 @@ class ViewController: UIViewController {
             } else {
                 result = "\(count + 1)"
             }
+            countString += "\(runningNumber) = \(result)"
+            wordBank.append(countString)
+            countString = ""
             leftValue = result
             runningNumber = ""
             outputLbl.text = result
@@ -129,10 +133,16 @@ class ViewController: UIViewController {
         } else {
             if runningNumber == "" {
                 result = "\(Double(sum) / Double(count))"
+                countString += "= \(result)"
+                wordBank.append(countString)
+                countString = ""
             } else {
                 count += 1
                 sum += Double(runningNumber)!
                 result = "\(Double(sum) / Double(count))"
+                countString += "\(runningNumber) = \(result)"
+                wordBank.append(countString)
+                countString = ""
             }
             leftValue = result
             if (canConvertToInt(num: result)) {
@@ -149,6 +159,7 @@ class ViewController: UIViewController {
     func operation(operation: Operation) {
         if currentOperation == .Count {
             if runningNumber != "" && runningNumber != "." {
+                countString += "\(runningNumber) count "
                 leftValue = runningNumber
                 runningNumber = ""
                 count += 1
@@ -162,6 +173,7 @@ class ViewController: UIViewController {
                     num -= 1
                 }
                 result = String(prod)
+                wordBank.append("\(runningNumber)! = \(result)")
                 leftValue = result
                 runningNumber = ""
                 outputLbl.text = result
@@ -174,6 +186,7 @@ class ViewController: UIViewController {
                     num -= 1
                 }
                 result = String(prod)
+                wordBank.append("\(runningNumber)! = \(result)")
                 leftValue = result
                 runningNumber = ""
                 outputLbl.text = result
@@ -186,15 +199,16 @@ class ViewController: UIViewController {
         } else if currentOperation == .Avg {
             if runningNumber != "" && runningNumber != "." {
                 sum += Double(runningNumber)!
+                countString += "\(runningNumber) avg "
                 leftValue = runningNumber
                 runningNumber = ""
                 count += 1
             } else if leftValue != "" && runningNumber != "." {
                 sum += Double(leftValue)!
+                countString += "\(leftValue) avg "
                 runningNumber = ""
                 count += 1
-            }
-            else if count > 0 {
+            } else if count > 0 {
                 specialOperation(operation: .Avg)
             }
         } else if currentOperation != .NULL {
