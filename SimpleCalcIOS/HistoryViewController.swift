@@ -26,6 +26,13 @@ class HistoryViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func viewDidLayoutSubviews() {
+        scrollView.isScrollEnabled = true
+        scrollView.contentSize = CGSize(width: 266, height: 600)
+        // Do any additional setup after loading the view
+//        scrollView.contentSize = CGSizeMake(400, 2300)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let talkView = segue.destination as! ViewController
         talkView.wordBank = wordBank
