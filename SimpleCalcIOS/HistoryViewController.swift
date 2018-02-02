@@ -28,7 +28,8 @@ class HistoryViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         scrollView.isScrollEnabled = true
-        scrollView.contentSize = CGSize(width: 266, height: 600)
+        scrollView.contentSize = CGSize(width: 266, height: 1000)
+        scrollView.showsVerticalScrollIndicator = false
         // Do any additional setup after loading the view
 //        scrollView.contentSize = CGSizeMake(400, 2300)
     }
